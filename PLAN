@@ -1,0 +1,24 @@
+------------------------------------------------------------------------
+Concepts
+------------------------------------------------------------------------
+  + Server/client abstraction
+  + Use socket bidirectionally
+  + Socket multiplex with namespace
+  + Dequeue goroutine enqueue internal channel
+  + Send directly
+
+  + Master election
+  + Heart beat
+  + Reconnects (channels)
+  + Down notifications subscription through channels
+  + Node name *registration*
+
+  + Ask alive nodes
+  + Ping/pong nodes
+
+------------------------------------------------------------------------
+Wire format
+------------------------------------------------------------------------
+
+  [len:var uint | flags:byte | tag:[len:var uint | bytes] | payload:bytes]
+  Flags: labeled | ... ?
