@@ -68,6 +68,17 @@ int Main() {
 	m.SendNonBlocking("/alerts", data)
 
 	/*
+	   Otra cuestion acerca del envio, es si en vez de tener un metodo Send() decidimos
+	   tambien exponer canales. Del mismo modo que tenemos canales para recibir. A lo mejor
+	   es mas elegante darle al usuario canales para enviar, que seria lo simetrico a tener canales
+	   para recibir. Por tanto tener un metodo que crea el canal y la gorutina enviadora asociada.
+	*/
+	// Crea un canal por el que mandar cosas asociadas a esa etiqueta y la gorutina asociada
+	// enviadora que estara pendiente de enviar esos datos por el socket.
+	c := m.Publish("/alerts")
+	c <- msg
+
+	/*
 		p ! Msg
 		receive
 			{node, Res} ->
