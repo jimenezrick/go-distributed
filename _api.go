@@ -1,4 +1,4 @@
-import "mesh"
+package "mesh"
 
 /*
    Me gusta el nombre de "mesh" para el paquete, porque es corto y representa un
